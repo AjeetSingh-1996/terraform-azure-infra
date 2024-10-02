@@ -9,5 +9,13 @@ stages:
       - job: tfsec
         displayName: tfsec
         steps:
-        
+        - task: tfsec@1
+          inputs:
+            version: 'v1.26.0'
+  - stage: terraforminitplan
+    displayName: terraform initplan
+    jobs: 
+      - job: terraforminitplan
+        displayName: terraform initplan
+        steps:
 
