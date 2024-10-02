@@ -18,4 +18,13 @@ stages:
       - job: terraforminitplan
         displayName: terraform initplan
         steps:
+        - task: TerraformTaskV4@4
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            backendServiceArm: 'Terraform-AzureConnection'
+            backendAzureRmResourceGroupName: 'ajrg1'
+            backendAzureRmStorageAccountName: 'ajstg'
+            backendAzureRmContainerName: 'ajcontainer'
+            backendAzureRmKey: 'terraform.tfstate'
 
